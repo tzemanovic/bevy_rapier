@@ -34,9 +34,11 @@ async-collider = [ "bevy/bevy_asset", "bevy/bevy_scene" ]
 [dependencies]
 # bevy = { version = "0.12", default-features = false }
 bevy = { git = "https://github.com/bevyengine/bevy", branch = "main", default-features = false }
-nalgebra = { version = "0.32.3", features = [ "convert-glam024" ] }
+# nalgebra = { version = "0.32.3", features = [ "convert-glam025" ] }
+nalgebra = { git = "https://github.com/tzemanovic/nalgebra", branch = "glam025", features = [ "convert-glam025" ] }
 # Don't enable the default features because we don't need the ColliderSet/RigidBodySet
-rapier2d = "0.17.0"
+# rapier2d = "0.17.0"
+rapier2d = { git = "https://github.com/tzemanovic/rapier", branch = "glam025" }
 bitflags = "2.4"
 #bevy_prototype_debug_lines = { version = "0.6", optional = true }
 log = "0.4"
@@ -47,7 +49,7 @@ serde = { version = "1", features = [ "derive" ], optional = true}
 bevy = { git = "https://github.com/bevyengine/bevy", branch = "main", default-features = false, features = ["x11"] }
 oorandom = "11"
 approx = "0.5.1"
-glam = { version = "0.24", features = [ "approx" ] }
+glam = { version = "0.25", features = [ "approx" ] }
 
 [package.metadata.docs.rs]
 # Enable all the features when building the docs on docs.rs
